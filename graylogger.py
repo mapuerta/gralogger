@@ -58,8 +58,8 @@ class Collector(multiprocessing.Process):
         self.logger.setLevel(logging.DEBUG)
         handler_str = "Gelf{}Handler".format(self.proto.capitalize())  
         func = getattr(pygelf, handler_str)
-        self.logger.addHandler(func(self.host, self.port, include_extra_fields=True,
-                                    **paramsproto[self.proto]))
+        self.logger.addHandler(func(self.host, self.port, debug=False,
+                                    include_extra_fields=True, **paramsproto[self.proto]))
 
     def check_message(self, data):
         loglevels = {'DEBUG': logging.DEBUG,

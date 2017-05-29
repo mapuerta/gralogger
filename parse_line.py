@@ -7,7 +7,11 @@ class ParseLogLine():
         self.formatter = formatter
 
     def split_colunms(self, line):
-        pass
+        """
+        This method configures the line to walk with the columns
+        defined in the variable format_colms
+        """
+        raise NotImplementedError
 
     def re_compile(self, line):
         pattern = re.compile(self.formatter)
